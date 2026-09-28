@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "emafg-forensics": {
+      "command": "C:\\Users\\princ\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "args": [
+        "C:\\Users\\princ\\OneDrive\\Desktop\\EMAFIG_BOB_FINAL_v2\\EMAFIG_BOB_FINAL\\mcp_server.py"
+      ],
+      "cwd": "C:\\Users\\princ\\OneDrive\\Desktop\\EMAFIG_BOB_FINAL_v2\\EMAFIG_BOB_FINAL",
+      "env": {
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONPATH": "C:\\Users\\princ\\OneDrive\\Desktop\\EMAFIG_BOB_FINAL_v2\\EMAFIG_BOB_FINAL"
+      },
+      "disabled": false
+    }
+  }
+}

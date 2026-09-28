@@ -1,0 +1,487 @@
+[
+  {
+    "path": "EMAFIG-FORensic-Output-Contract.md",
+    "bytes": 4005,
+    "sha256": "86161e54d7ad69abc212487b672ce3ff750cf6a13c27644b16cca4436cc7bee3"
+  },
+  {
+    "path": "mcp_server.py",
+    "bytes": 6601,
+    "sha256": "76994677c503ec3e5c19064a22f41095df09e0cb2001064701a2306e79d5f377"
+  },
+  {
+    "path": "EMAFIG-COURT-READINESS.md",
+    "bytes": 1134,
+    "sha256": "28d1fe0b3e81177b7e995ad64365c1baf13de0724c742ac687796f76f0e72ca4"
+  },
+  {
+    "path": "docker-compose.yml",
+    "bytes": 346,
+    "sha256": "228e863ebcdf7f756be91256a71a432954562370b28809131fb769d4b57fdc60"
+  },
+  {
+    "path": ".env.example",
+    "bytes": 274,
+    "sha256": "de121b131cf809c9854b2a4d9f19e626f06c993e3a0cbc6170869f4a5fe8dc4d"
+  },
+  {
+    "path": "Dockerfile",
+    "bytes": 288,
+    "sha256": "874622a1b10f7234af970e9b21981b25ba69fc6ee4218dfe2ef45dcc1790045c"
+  },
+  {
+    "path": "README.md",
+    "bytes": 7883,
+    "sha256": "913369a94898520ce179d9eab49271cc61a695b79c1ad35c8232c97ec0a1cdc6"
+  },
+  {
+    "path": "run.py",
+    "bytes": 770,
+    "sha256": "9ef7729a9b1d74d5db46f0b0d87c84ce43260b3ed82f53581a64e913fb9df3e8"
+  },
+  {
+    "path": "AGENTS.md",
+    "bytes": 5656,
+    "sha256": "1de4babc5640a520f8ab7d56f0c211288419957c1572b16c37e6ddb9445bd314"
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 191,
+    "sha256": "1ebed28ca41360650791cee37e9b85179dc69217e1340423f6ae42f1671c6090"
+  },
+  {
+    "path": "docs/BOB_INTEGRATION.md",
+    "bytes": 910,
+    "sha256": "0c643e3923a32a25cbda4c9bc65bb3f121ae09b3668767a7e2c98261a82e0965"
+  },
+  {
+    "path": "docs/BOB_MCP_WINDOWS.md",
+    "bytes": 3902,
+    "sha256": "8ebad3d57fd0d5000338f0e34cc4eaedcfd47f060a4fac7530f48876d0161d99"
+  },
+  {
+    "path": "docs/RESEARCH_AND_INTEGRATION.md",
+    "bytes": 2774,
+    "sha256": "59b7fd91f0716582c73e417a994049f9e43df3211f0d6e402af4fa939669dac3"
+  },
+  {
+    "path": "data/legal_sources.json",
+    "bytes": 752,
+    "sha256": "dcc9a8db7a584815f8a4e914190b28d698973c37e13c6c6c1ce18ea90fe3efb1"
+  },
+  {
+    "path": ".bob/mcp.json",
+    "bytes": 347,
+    "sha256": "311e084b550285a48b190a5bdd4d2fa77d24a1c6e3f2fbb16e9be3254a84b653"
+  },
+  {
+    "path": ".bob/custom_modes.yaml",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "scripts/fetch_aasist.py",
+    "bytes": 557,
+    "sha256": "ad7eaad1892e161aab0d38fd4242d684affeddfb6ac23101d8c820bd0c64b143"
+  },
+  {
+    "path": ".pytest_cache/README.md",
+    "bytes": 302,
+    "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+  },
+  {
+    "path": ".pytest_cache/CACHEDIR.TAG",
+    "bytes": 191,
+    "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+  },
+  {
+    "path": ".pytest_cache/.gitignore",
+    "bytes": 37,
+    "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+  },
+  {
+    "path": "app/utils.py",
+    "bytes": 2457,
+    "sha256": "d22ffa3af4255e464f10ce5f255ba7a89fbef8c02b57eceb89a0c7981dbf150f"
+  },
+  {
+    "path": "app/engine.py",
+    "bytes": 11962,
+    "sha256": "c3fa483dae551ff9bc32671dbd60ce91b48e99b25eb5bb4b78fbe8c4cbce6404"
+  },
+  {
+    "path": "app/store.py",
+    "bytes": 3358,
+    "sha256": "7a58477274cdc5ef4e712b0ac1961f2a23e80d944610d111adce0d33892c8e11"
+  },
+  {
+    "path": "app/__init__.py",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "app/main.py",
+    "bytes": 2626,
+    "sha256": "79e064a2743ddec942f96d17f3418ff491dfd52a7f17232da03aa8c6c5c451c0"
+  },
+  {
+    "path": "app/bob.py",
+    "bytes": 4041,
+    "sha256": "c7281a4092d91735569b6763205782c2e7fd6cd2702ba534e8aad4e86c8f440c"
+  },
+  {
+    "path": "app/schemas.py",
+    "bytes": 3027,
+    "sha256": "4b284e67bfab527eaa584ad2bc9efe4f321c9a4149b27b6841639e5d8585c87c"
+  },
+  {
+    "path": "tests/test_pipeline.py",
+    "bytes": 691,
+    "sha256": "6c76328d50f856aae96f08bd4d1cb7e85fc2d5f2fe0d67788e91f9c089da121a"
+  },
+  {
+    "path": "tests/__pycache__/test_pipeline.cpython-313-pytest-9.0.2.pyc",
+    "bytes": 3437,
+    "sha256": "753d3163651c9ca823cdae9ff636a8a9811739ce4ca589890ade737cbebba984"
+  },
+  {
+    "path": "core/plane_c/tool_batteries.py",
+    "bytes": 47642,
+    "sha256": "4638e04f2213930107686caba6eade4c469e6e260781ced07d2d51468e33c43e"
+  },
+  {
+    "path": "core/plane_c/__init__.py",
+    "bytes": 1152,
+    "sha256": "7803c5bd136b540caca1a83c413b04a826a0ad74113032dbb706913e437b1bff"
+  },
+  {
+    "path": "core/plane_c/intake.py",
+    "bytes": 11092,
+    "sha256": "c4924232824c2b570d47a91e759cc4eb8c5b5695f3ea0f28a55287964cab0b79"
+  },
+  {
+    "path": "core/plane_c/custody.py",
+    "bytes": 9467,
+    "sha256": "ee668277ba0e9c93ce157b0b22cefd96f92e98db176a79c7d18a069bfc64a419"
+  },
+  {
+    "path": "core/plane_c/independence.py",
+    "bytes": 6384,
+    "sha256": "f2ec3c22742930d122f72b5f4b11d18dd07baf1d2882c515aca7b6ce78a93278"
+  },
+  {
+    "path": "core/plane_c/citation_check.py",
+    "bytes": 10080,
+    "sha256": "1f2aaa926d83a826f7f3e0ec70ec4197aba40fc87490fcf6bbbf4faabb111658"
+  },
+  {
+    "path": "core/plane_c/ach.py",
+    "bytes": 13151,
+    "sha256": "90ee8e68a86171a8e5dce17dbe34f0bb296ba4e24008a9bc3604b3ec10db7329"
+  },
+  {
+    "path": "core/plane_c/certificate.py",
+    "bytes": 19163,
+    "sha256": "98690c2e1a361601c4a996f2ef60e18c4b55c404b963b040bdbf2fa65db1d3b1"
+  },
+  {
+    "path": "core/plane_c/linker.py",
+    "bytes": 19830,
+    "sha256": "3d18c1464681d33ac81e89c7ef7ff37ab5ad0a63c5dfde4c8944cbdc1e36fd36"
+  },
+  {
+    "path": "core/plane_c/legal_engine.py",
+    "bytes": 19615,
+    "sha256": "3c39ea8fbea72f1d4dbec5306e444632a9cf57fdf6046ddd8318e8e7dbdd0630"
+  },
+  {
+    "path": "core/plane_c/ledger.py",
+    "bytes": 8574,
+    "sha256": "508613df266acc865d1890f02d6f85f5a58f53e173944778f3a0457392e14892"
+  },
+  {
+    "path": "core/plane_c/__pycache__/linker.cpython-313.pyc",
+    "bytes": 24725,
+    "sha256": "5c88f3c4ed574ea1474c47a60e5eac631233f9d9bbf8194b49e5e0bf110d6378"
+  },
+  {
+    "path": "core/plane_c/__pycache__/ledger.cpython-313.pyc",
+    "bytes": 10429,
+    "sha256": "0262873dc347bb9d189e4317beceb87a448f029427ce4350d4824459485ed6d0"
+  },
+  {
+    "path": "core/plane_c/__pycache__/tool_batteries.cpython-313.pyc",
+    "bytes": 55636,
+    "sha256": "7a56b4543d86dce43d4a85f56cc9a2bb64331d55001e1ef7798b11a066e76d26"
+  },
+  {
+    "path": "core/plane_c/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 1246,
+    "sha256": "d883a96d4c82bba1625d0d4240069021b6bd4df7bdbc432b6848fa83f5545da7"
+  },
+  {
+    "path": "core/plane_c/__pycache__/certificate.cpython-313.pyc",
+    "bytes": 24624,
+    "sha256": "19ef8f8f60e2262ab8be96846d5b379d208f789050589883f5e45ee2f743ab7e"
+  },
+  {
+    "path": "core/plane_c/__pycache__/citation_check.cpython-313.pyc",
+    "bytes": 11692,
+    "sha256": "de4df37ea6a1f272eb07cb53dceaa075ad35648e07e0220f9a8d5b819e11da4c"
+  },
+  {
+    "path": "core/plane_c/__pycache__/ach.cpython-313.pyc",
+    "bytes": 13724,
+    "sha256": "9532445d75618f7177530ca084476d7b23c189ebf63abaf45e0c72d5c7198ad5"
+  },
+  {
+    "path": "core/plane_c/__pycache__/legal_engine.cpython-313.pyc",
+    "bytes": 17310,
+    "sha256": "5971e34d989006abc3557223a43b386dd2ed3a275e947d24ae005544cf9684fb"
+  },
+  {
+    "path": "core/plane_c/__pycache__/intake.cpython-313.pyc",
+    "bytes": 12444,
+    "sha256": "62a7e08f931d5e80dfd64fd9cf112cd230e541484eb6cab7239ba29bb1d141a4"
+  },
+  {
+    "path": "core/plane_c/__pycache__/independence.cpython-313.pyc",
+    "bytes": 7031,
+    "sha256": "94166fc8cead41431ead4de37f66647a250d761faada7358c78c61554ca3b206"
+  },
+  {
+    "path": "core/plane_c/__pycache__/custody.cpython-313.pyc",
+    "bytes": 10870,
+    "sha256": "ecbed60aa7c1c6ee25c169ff611153166b891c79cb82423d8e5a89d83a5a94ed"
+  },
+  {
+    "path": "core/plane_c/schemas/schemas.json",
+    "bytes": 4436,
+    "sha256": "a48b84533185547b5621a963663d2de205e78a830a6add727c4da30b2e1db059"
+  },
+  {
+    "path": "app/agents/__init__.py",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "app/agents/intake.py",
+    "bytes": 750,
+    "sha256": "bd75daac549867e302ad32f1473f26cbd9292b0f06dd739a1168c36f73479600"
+  },
+  {
+    "path": "app/agents/metadata.py",
+    "bytes": 2461,
+    "sha256": "9f505103ffaabc988d9edaef29d632d70b492c7ef1bb76a4f42ed068d732176a"
+  },
+  {
+    "path": "app/agents/av_sync.py",
+    "bytes": 1612,
+    "sha256": "29baf79b23b168e2a92370bcb32970cae9bbab5aaa7a2da32357a5e51e0bc2a9"
+  },
+  {
+    "path": "app/agents/audio.py",
+    "bytes": 5102,
+    "sha256": "dc87195f13eb713271796c6c4f3bfe1b5043aeec300b98f99529fa752795ba1e"
+  },
+  {
+    "path": "app/agents/temporal.py",
+    "bytes": 2003,
+    "sha256": "6fd6445eb10a016e182604f2d1c5ad9aaef21eb99dccb993e7baa5df23e2a613"
+  },
+  {
+    "path": "app/agents/visual.py",
+    "bytes": 3395,
+    "sha256": "924f3a67cd1242770055a50944c2faecca706b7abad52b9a1fba5440bcdf33bc"
+  },
+  {
+    "path": "app/agents/compression.py",
+    "bytes": 1833,
+    "sha256": "de8dac87db5a4fc2f84802ac13b89b78094870e1f8883015878307a3dc38b8a4"
+  },
+  {
+    "path": "app/agents/provenance.py",
+    "bytes": 2016,
+    "sha256": "67b09a972a60b5e3029237d96908fd726d3cc7a2dc97e55535c9925ccb290106"
+  },
+  {
+    "path": "app/ui/index.html",
+    "bytes": 8451,
+    "sha256": "dac1464fc7f62b12253c9933a42458629171990cd327b92b78ff026b19a14e26"
+  },
+  {
+    "path": "app/static/.gitkeep",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "app/__pycache__/main.cpython-313.pyc",
+    "bytes": 6089,
+    "sha256": "b453e96954966cdfae6f4d5dfa5cf9fe3343a3a160267e23ccf3ee164d700ea6"
+  },
+  {
+    "path": "app/__pycache__/bob.cpython-313.pyc",
+    "bytes": 5628,
+    "sha256": "83237d353b8971cdf545c4d7d348ab8c1f9ebd5c2f4f33a0d5385abeb18292e2"
+  },
+  {
+    "path": "app/__pycache__/schemas.cpython-313.pyc",
+    "bytes": 5108,
+    "sha256": "7480933d7053a15c1422857a670f4e39c4d75d2bda9a87e3b671b76773fc5a1b"
+  },
+  {
+    "path": "app/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 139,
+    "sha256": "384e2597b8c6cc235b49fa4f7049500e3bebca823d71b216f7db7994c233b24b"
+  },
+  {
+    "path": "app/__pycache__/store.cpython-313.pyc",
+    "bytes": 7126,
+    "sha256": "c5cbe7619d246ab6e06b855f5d59ce8c7f8e80d9bc8ed23b19e172fb7331c5c3"
+  },
+  {
+    "path": "app/__pycache__/engine.cpython-313.pyc",
+    "bytes": 20904,
+    "sha256": "ed698881fbfdc4d524fadec3eb889a5d35bb31736be1fafd9f3a668f102b5cbb"
+  },
+  {
+    "path": "app/__pycache__/utils.cpython-313.pyc",
+    "bytes": 5592,
+    "sha256": "4be495e96a8c1852dd36d912adae8fadf62eb4e257210ddc92646ffc5a52275c"
+  },
+  {
+    "path": "app/forensics/__init__.py",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "app/forensics/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 122,
+    "sha256": "133c4cdf9d248223df995bf80af560be29e080d180f71413ba083e3da7d0b783"
+  },
+  {
+    "path": "app/agents/__pycache__/compression.cpython-313.pyc",
+    "bytes": 3210,
+    "sha256": "ac0b459efd1f0399ad68ae70a74f856b4cf540936626b45ef00c27715e671625"
+  },
+  {
+    "path": "app/agents/__pycache__/temporal.cpython-313.pyc",
+    "bytes": 3523,
+    "sha256": "055c5bea86eb9a2f47365ba106731670ac4b7bbd930fe94947df099db070491b"
+  },
+  {
+    "path": "app/agents/__pycache__/visual.cpython-313.pyc",
+    "bytes": 5742,
+    "sha256": "de77391436a2184aef1e87fdc913d6d36da2000ed231f7df315bd7ae80e6301b"
+  },
+  {
+    "path": "app/agents/__pycache__/__init__.cpython-313.pyc",
+    "bytes": 146,
+    "sha256": "d6b9beb20df2b6370e090c187469554cb54ec748870cf5717986e80ee2c34eaf"
+  },
+  {
+    "path": "app/agents/__pycache__/audio.cpython-313.pyc",
+    "bytes": 8236,
+    "sha256": "aca8679704380a21f3e4fb4a464283fd7789bc4832c01b9af68b7cf4cd8a12ac"
+  },
+  {
+    "path": "app/agents/__pycache__/av_sync.cpython-313.pyc",
+    "bytes": 2976,
+    "sha256": "c5efb88c56932a4969f2bb2ec379b16fff479d5e2a2fc199b648b554f188a304"
+  },
+  {
+    "path": "app/agents/__pycache__/intake.cpython-313.pyc",
+    "bytes": 1380,
+    "sha256": "08caa752fd46c0d3c4c3d78a4266591afd538b821038f822750339530bf6f0ff"
+  },
+  {
+    "path": "app/agents/__pycache__/metadata.cpython-313.pyc",
+    "bytes": 4150,
+    "sha256": "4b4093a7f78aac151ef5f2df69011fc38ef5ef231ca2a9b138e6f7d409662e09"
+  },
+  {
+    "path": "app/agents/__pycache__/provenance.cpython-313.pyc",
+    "bytes": 2736,
+    "sha256": "7f5b0db462d0c4df0f1775111b5212866ccc3821051b3308b4c0f29d0e624a17"
+  },
+  {
+    "path": ".pytest_cache/v/cache/nodeids",
+    "bytes": 60,
+    "sha256": "75434a4dde4d34754c96ecf4019cf2eac36dc1d810f45c7c0b1a0a71ac33cba5"
+  },
+  {
+    "path": ".bob/rules/EMAFIG.md",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": ".bob/skills/visual-forensics/SKILL.md",
+    "bytes": 10089,
+    "sha256": "e264b8d88cf504e6e754cef76f27c287405f5c57fd6cacb91e7537aa2de64023"
+  },
+  {
+    "path": ".bob/skills/forensic-intake/SKILL.md",
+    "bytes": 9706,
+    "sha256": "7c55e5a833f523a95458a377ec3bbc9e46fea1a80e8072fd336c518341c370bf"
+  },
+  {
+    "path": ".bob/skills/c2pa-provenance/SKILL.md",
+    "bytes": 9460,
+    "sha256": "cdd8a373f79b6ecb188e45c470415fd13013c0c54f275bf62b18b89075d90ea5"
+  },
+  {
+    "path": ".bob/skills/evidence-graph/SKILL.md",
+    "bytes": 9597,
+    "sha256": "2c98a6aa114e244bc40bf5dc444bf56a2b84937209d86928c81d3354e2e90622"
+  },
+  {
+    "path": ".bob/skills/av-sync-analysis/SKILL.md",
+    "bytes": 9899,
+    "sha256": "cc90bc8c7fd1d216d28e91d1718a00a10f9bf547d1dc34a9b8013ce130a9d6cd"
+  },
+  {
+    "path": ".bob/skills/audio-deepfake-model/SKILL.md",
+    "bytes": 809,
+    "sha256": "a4a94eafef3b15674421d24b1992c8c74cfe1c9a8a66fa0bd38dcc19d8554bf8"
+  },
+  {
+    "path": ".bob/skills/judge-demo/SKILL.md",
+    "bytes": 729,
+    "sha256": "90d6c7a638ef35944c50eeeaede313c2b5406db95b6036f1988a81cce73cf441"
+  },
+  {
+    "path": ".bob/skills/adversarial-verification/SKILL.md",
+    "bytes": 9887,
+    "sha256": "193a58a2fbe3818de894ddd1ed0e6c1d2455f1e641ae73ff209fdae694cbceb1"
+  },
+  {
+    "path": ".bob/skills/forensic-reporting/SKILL.md",
+    "bytes": 10363,
+    "sha256": "d1622808dcef1313b3ecaefd28f5821e770384dbda0d0a809e4d3b0ba49e738d"
+  },
+  {
+    "path": ".bob/skills/metadata-analysis/SKILL.md",
+    "bytes": 9742,
+    "sha256": "6a61cdc4dc01fa8392a7f5dcb197d0b083738cbf270e052ad91bbee74d6b6d67"
+  },
+  {
+    "path": ".bob/skills/plane-b-orchestrator/SKILL.md",
+    "bytes": 1356,
+    "sha256": "b7714ca707b0af2236d3bcd5211e4a3f059aa611707364c9adf8c1a60a142293"
+  },
+  {
+    "path": ".bob/skills/audio-forensics/SKILL.md",
+    "bytes": 9852,
+    "sha256": "a11c6ca8915ee736e1ac7b6fcaeb840aeb52956cfa2d1aa76ec99b2573b0dbf2"
+  },
+  {
+    "path": ".bob/skills/hypothesis-analysis/SKILL.md",
+    "bytes": 9827,
+    "sha256": "19d5232a977195f38638c5bb760a1c7fcc9767bbcc469365576df05d36c693f3"
+  },
+  {
+    "path": ".bob/skills/temporal-analysis/SKILL.md",
+    "bytes": 9605,
+    "sha256": "eb6fa13be85fe4ddc8e8b5addf4c33bd524562c759c04cc972f2506ee778bd22"
+  }
+]

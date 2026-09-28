@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="emafig-token" content="__EMAFIG_TOKEN__">
+<title>EMAFIG Control Room</title>
+<style>
+:root{--bg:#0a0d12;--panel:#10161e;--panel2:#0c1118;--line:#222c38;--text:#e6ebf1;--muted:#8a97a8;--accent:#5eead4;--warn:#fbbf24;--bad:#f87171;--blue:#60a5fa;--violet:#a78bfa;--r:10px}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,system-ui,sans-serif}
+a{color:var(--blue)}button{font:inherit;cursor:pointer;border:1px solid #334155;background:#16202b;color:var(--text);border-radius:8px;padding:7px 12px}
+button:hover{border-color:var(--accent)}button.primary{background:#0f3d38;border-color:#14b8a6}button.danger{border-color:#7f1d1d}button.sm{padding:3px 8px;font-size:12px}
+button:disabled{opacity:.45;cursor:not-allowed}
+input,select,textarea{font:inherit;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px 9px;width:100%}
+textarea{min-height:90px;resize:vertical}label{font-size:12px;color:var(--muted);display:block;margin:8px 0 3px}
+header{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid var(--line);background:#0b1016;position:sticky;top:0;z-index:5}
+.logo{font-weight:800;letter-spacing:.08em}.logo span{color:var(--accent);font-weight:600}
+.pill{border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:320px 1fr;min-height:calc(100vh - 56px)}
+aside{border-right:1px solid var(--line);background:#0b1016;padding:16px;overflow:auto;max-height:calc(100vh - 56px);position:sticky;top:56px}
+main{padding:20px 24px;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.muted{color:var(--muted)}.small{font-size:12px}.mono{font-family:ui-monospace,Consolas,monospace;font-size:12px;word-break:break-all}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.grow{flex:1}
+.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:14px 0}
+.kpi .v{font-size:22px;font-weight:800}.kpi .l{font-size:12px;color:var(--muted)}
+.caseitem{padding:10px;border-radius:8px;border:1px solid transparent;cursor:pointer;margin:4px 0}
+.caseitem:hover,.caseitem.active{background:#121a24;border-color:#2a3644}
+.badge{font-size:11px;font-weight:600;border-radius:999px;padding:2px 8px;display:inline-block;white-space:nowrap}
+.b-ok{background:#063b33;color:var(--accent)}.b-warn{background:#422006;color:var(--warn)}.b-bad{background:#450a0a;color:var(--bad)}
+.b-mute{background:#1e293b;color:var(--muted)}.b-blue{background:#172554;color:var(--blue)}.b-vio{background:#2e1065;color:var(--violet)}
+.stepper{display:flex;gap:4px;margin:10px 0 4px;flex-wrap:wrap}.step{font-size:11px;padding:4px 9px;border-radius:6px;background:#141c26;color:var(--muted)}
+.step.done{background:#063b33;color:var(--accent)}.step.now{background:#172554;color:var(--blue);font-weight:700}
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);margin-top:8px;overflow-x:auto}
+.tab{padding:9px 14px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap}
+.tab.active{color:var(--text);border-color:var(--accent)}.pane{padding-top:16px}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:600}
+tr.nd td{opacity:.45}tr.clickable:hover td{background:#121a24;cursor:pointer}
+.cell{width:34px;text-align:center;font-weight:700;border-radius:6px;cursor:pointer;user-select:none}
+.cC{background:#063b33;color:var(--accent)}.cI{background:#450a0a;color:var(--bad)}.cN{background:#1e293b;color:var(--muted)}.edited{outline:1px dashed var(--warn)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.agent{border:1px solid var(--line);border-left:3px solid #475569;border-radius:8px;padding:10px;background:var(--panel2)}
+.agent.completed{border-left-color:var(--accent)}.agent.completed_with_warnings{border-left-color:var(--warn)}.agent.failed{border-left-color:var(--bad)}
+.agent.running,.agent.queued{border-left-color:var(--blue)}.agent.not_applicable{opacity:.55}
+.note{border-left:3px solid var(--warn);background:#1c1406;padding:8px 10px;border-radius:6px;font-size:12px;margin:6px 0}
+.note.bad{border-color:var(--bad);background:#1f0a0a}.note.ok{border-color:var(--accent);background:#04201c}.note.info{border-color:var(--blue);background:#0b1730}
+.gauge{height:10px;border-radius:6px;background:#1e293b;overflow:hidden}.gauge>div{height:100%}
+.sent{padding:6px 8px;border-radius:6px;margin:3px 0}.sent.fail{background:#1f0a0a;border:1px solid #7f1d1d}.sent.fail s{color:#fca5a5}
+.drawer{position:fixed;right:0;top:56px;bottom:0;width:min(520px,100%);background:#0d131b;border-left:1px solid var(--line);padding:18px;overflow:auto;z-index:10;box-shadow:-10px 0 30px #0008;display:none}
+.drawer.open{display:block}.kv{display:grid;grid-template-columns:140px 1fr;gap:4px 10px;font-size:12px}.kv div:nth-child(odd){color:var(--muted)}
+pre{white-space:pre-wrap;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:12px;max-height:480px;overflow:auto}
+details summary{cursor:pointer;color:var(--muted);font-size:12px;margin:6px 0}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#1e293b;border:1px solid #334155;padding:10px 16px;border-radius:8px;display:none;z-index:20;max-width:80vw}
+.toast.err{border-color:var(--bad);color:#fecaca}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}aside{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line)}.kpis{grid-template-columns:repeat(2,1fr)}.grid2,.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">EMAFIG <span>FORENSIC CONTROL ROOM</span></div>
+  <div class="row"><span class="pill" id="h-bob">Bob: …</span><span class="pill" id="h-base">Baseline: …</span><span class="pill" id="h-user"></span></div>
+</header>
+<div class="layout">
+<aside>
+  <div class="card">
+    <b>New case</b>
+    <label>Evidence file</label><input id="f-file" type="file" accept="video/*,image/*,audio/*,.mpeg,.opus,.amr">
+    <label>Your name (recorded in custody and ledger)</label><input id="f-officer" placeholder="e.g. SI R. Sharma">
+    <label>How received</label><input id="f-how" placeholder="WhatsApp forward, email, USB…">
+    <details><summary>More preservation fields</summary>
+      <label>Platform</label><input id="f-platform">
+      <label>Source URL</label><input id="f-url">
+      <label>Sender identifier</label><input id="f-sender">
+      <label>Received at</label><input id="f-recv" type="datetime-local">
+      <label>Seizure memo ref</label><input id="f-memo">
+      <label>Device details (make/model)</label><input id="f-device">
+      <label>Officer ID</label><input id="f-oid">
+    </details>
+    <label>Case description</label><input id="f-desc">
+    <div style="height:10px"></div>
+    <button class="primary" style="width:100%" id="b-upload" onclick="upload()">Preserve &amp; start investigation</button>
+    <div class="small muted" style="margin-top:6px">Use synthetic or consented media for demos. The original is hashed and stored read-only.</div>
+  </div>
+  <div class="row between" style="margin:16px 0 4px"><b>Cases</b><span class="small muted" id="case-count"></span></div>
+  <div id="cases"></div>
+</aside>
+<main>
+  <div id="empty" class="card">
+    <h2 style="margin-top:0">Evidence-centric deepfake investigation</h2>
+    <p class="muted">Upload a file to preserve it (SHA-256/512, read-only, custody entry), run the forensic examiners in parallel, compare every measurement with its baseline, and weigh competing hypotheses before any report is drafted.</p>
+    <p class="muted">The workflow: <b>Review observations → Accept ACH → Mark gaps → Confirm legal facts → Generate report → Officer + supervisor sign-off</b>.</p>
+  </div>
+  <div id="view" style="display:none"></div>
+</main>
+</div>
+<div class="drawer" id="drawer"></div>
+<div class="toast" id="toast"></div>
+<script>
+const TOKEN=document.querySelector('meta[name=emafig-token]').content;
+let CASE=null, TAB='obs', LEGALSPEC=null, POLL=null, OBSFILTER='all';
+const esc=x=>String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const me=()=>document.getElementById('f-officer').value.trim()||localStorage.getItem('emafig-user')||'';
+function toast(msg,err){const t=document.getElementById('toast');t.textContent=msg;t.className='toast'+(err?' err':'');t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',err?6000:2500)}
+async function api(url,opt={}){opt.headers={...(opt.headers||{}),'X-EMAFIG-Token':TOKEN};if(opt.json){opt.headers['Content-Type']='application/json';opt.body=JSON.stringify(opt.json);opt.method=opt.method||'POST'}
+  const r=await fetch(url,opt);const ct=r.headers.get('content-type')||'';const body=ct.includes('json')?await r.json():await r.text();
+  if(!r.ok){const m=body&&body.detail?body.detail:String(body);toast(m,true);throw Error(m)}return body}
+function who(){let n=me();if(!n){n=prompt('Your name (recorded in the ledger):');if(!n)throw Error('name required');document.getElementById('f-officer').value=n}localStorage.setItem('emafig-user',n);document.getElementById('h-user').textContent=n;return n}
+const badge=(s)=>{const m={completed:'b-ok',accepted:'b-ok',within:'b-ok',low:'b-ok',complete:'b-ok',collected:'b-ok',confirmed:'b-ok',
+ completed_with_warnings:'b-warn',elevated:'b-warn',moderate:'b-warn',awaiting_review:'b-blue',awaiting_signoff:'b-blue',awaiting_second_signoff:'b-blue',proposed:'b-blue',
+ failed:'b-bad',rejected:'b-bad',high:'b-bad',missing:'b-bad',running:'b-blue',queued:'b-blue'};return `<span class="badge ${m[s]||'b-mute'}">${esc(String(s??'—').replace(/_/g,' '))}</span>`}
+
+async function init(){try{const h=await api('/api/health');document.getElementById('h-bob').textContent='Bob: '+h.bob_mode;document.getElementById('h-base').textContent='Baseline: '+h.baseline_profile}catch(e){}
+  const u=localStorage.getItem('emafig-user');if(u){document.getElementById('f-officer').value=u;document.getElementById('h-user').textContent=u}
+  LEGALSPEC=await api('/api/legal/rules');await refreshCases();const last=location.hash.slice(1);if(last)show(last)}
+async function refreshCases(){const cs=await api('/api/cases');document.getElementById('case-count').textContent=cs.length;
+  document.getElementById('cases').innerHTML=cs.map(c=>`<div class="caseitem ${CASE&&CASE.case_id===c.case_id?'active':''}" onclick="show('${esc(c.case_id)}')">
+   <div class="row between"><b class="small">${esc(c.case_id)}</b>${c.sealed?'<span class="badge b-vio">sealed</span>':badge(c.status)}</div>
+   <div class="small muted">${esc(c.filename)} · ${esc(c.media_type)}</div>
+   ${c.risk_score!=null?`<div class="small">Risk index ${c.risk_score}/100 ${badge(c.band)}</div>`:''}</div>`).join('')||'<div class="muted small">No cases yet.</div>'}
+async function upload(){const f=document.getElementById('f-file').files[0];if(!f)return toast('Choose an evidence file first',true);
+  const fd=new FormData();fd.append('file',f);const map={description:'f-desc',officer_name:'f-officer',officer_id:'f-oid',how_received:'f-how',platform:'f-platform',source_url:'f-url',sender_id:'f-sender',received_at:'f-recv',seizure_memo_ref:'f-memo',device_details:'f-device'};
+  for(const[k,id]of Object.entries(map))fd.append(k,document.getElementById(id).value);
+  const b=document.getElementById('b-upload');b.disabled=true;b.textContent='Hashing & preserving…';
+  try{const c=await api('/api/cases',{method:'POST',body:fd});localStorage.setItem('emafig-user',me());TAB='agents';await show(c.case_id);toast('Preserved. SHA-256 '+c.original.sha256.slice(0,16)+'…')}finally{b.disabled=false;b.textContent='Preserve & start investigation'}}
+async function show(id){CASE=await api('/api/cases/'+encodeURIComponent(id));location.hash=id;render();refreshCases();
+  clearTimeout(POLL);if(['queued','running'].includes(CASE.status))POLL=setTimeout(()=>show(id),1500)}
+async function act(url,json,msg){CASE=await api(url,{json});render();refreshCases();if(msg)toast(msg)}
+const U=p=>'/api/cases/'+encodeURIComponent(CASE.case_id)+p;
+
+function stages(c){const steps=[['Intake',1],['Examiners',!['queued','running'].includes(c.status)],['Review',c.observations.some(o=>o.review_status==='accepted')],['ACH',!!(c.ach||{}).accepted_by],['Legal',!!(c.legal||{}).confirmed_by],['Report',!!(c.reports||{}).brief],['Sign-off',c.signoffs.length>=2],['Sealed',c.sealed]];
+  let now=steps.findIndex(s=>!s[1]);return `<div class="stepper">${steps.map((s,i)=>`<span class="step ${s[1]?'done':i===now?'now':''}">${i+1}. ${s[0]}</span>`).join('')}</div>`}
+function riskColor(s){return s>=60?'var(--bad)':s>=25?'var(--warn)':'var(--accent)'}
+
+function render(){const c=CASE;document.getElementById('empty').style.display='none';const v=document.getElementById('view');v.style.display='block';
+  const acc=c.observations.filter(o=>o.review_status==='accepted').length, rk=c.risk||{}, t=c.triage||{};
+  const agentsDone=Object.values(c.agent_runs).filter(a=>!['queued','running'].includes(a.status)).length;
+  v.innerHTML=`<div class="row between"><div><h2 style="margin:0">${esc(c.case_id)}</h2><div class="muted small">${esc(c.filename)} · ${esc(c.media_type)} · ${esc(c.original.size_bytes)} bytes · created ${esc(c.created_utc.slice(0,19))}Z</div></div>
+   <div class="row">${c.sealed?'<span class="badge b-vio">SEALED</span>':badge(c.status)}<button class="sm" onclick="rerun()" ${c.sealed||['queued','running'].includes(c.status)?'disabled':''} title="Ask Bob again for ACH proposals, challenges and triage">↻ Re-run Bob reasoning</button></div></div>
+  ${stages(c)}
+  ${c.legal&&c.legal.escalation?'<div class="note bad"><b>ESCALATE:</b> a minor may be involved. Do not copy or route the media further.</div>':''}
+  ${c.human_review&&c.human_review.report_stale?'<div class="note">The case changed after the last draft. Regenerate the report before sign-off.</div>':''}
+  <div class="kpis">
+   <div class="card kpi"><div class="l">SHA-256 (original, ${c.original.read_only?'read-only':'NOT read-only'})</div><div class="mono">${esc(c.original.sha256)}</div></div>
+   <div class="card kpi"><div class="l">Agents finished</div><div class="v">${agentsDone}/${Object.keys(c.agent_runs).length}</div></div>
+   <div class="card kpi"><div class="l">Observations confirmed</div><div class="v">${acc}<span class="muted" style="font-size:14px"> / ${c.observations.length}</span></div></div>
+   <div class="card kpi"><div class="l">Baseline risk index (uncalibrated)</div><div class="v" style="color:${riskColor(rk.risk_score||0)}">${rk.risk_score??'—'}<span class="muted" style="font-size:14px">/100</span></div><div class="gauge"><div style="width:${rk.risk_score||0}%;background:${riskColor(rk.risk_score||0)}"></div></div></div>
+   <div class="card kpi"><div class="l">Triage estimate · ${esc(t.provider||'—')}</div><div class="v">${t.probability_manipulated!=null?Number(t.probability_manipulated).toFixed(2):'—'} ${t.likelihood_band?badge(t.likelihood_band):''}</div><div class="small muted">${esc((t.probability_label||'').replace(/_/g,' '))} · not for court</div></div>
+  </div>
+  <div class="tabs">${[['agents','Agents'],['obs','Observations'],['risk','Risk & baselines'],['ach','ACH matrix'],['chal','Challenges'],['gaps','Evidence gaps'],['legal','Legal'],['report','Report & sign-off'],['ledger','Audit ledger']].map(([k,l])=>`<div class="tab ${TAB===k?'active':''}" onclick="TAB='${k}';render()">${l}</div>`).join('')}</div>
+  <div class="pane">${({agents:paneAgents,obs:paneObs,risk:paneRisk,ach:paneACH,chal:paneChal,gaps:paneGaps,legal:paneLegal,report:paneReport,ledger:paneLedger}[TAB])(c)}</div>`;
+  if(TAB==='ledger')loadLedger();if(TAB==='report')loadReportFiles()}
+
+function paneAgents(c){return `<div class="grid3">${Object.values(c.agent_runs).map(a=>`<div class="agent ${a.status}">
+  <div class="row between"><b>${esc(a.agent_id)}</b>${badge(a.status)}</div>
+  <div class="small muted">v${esc(a.version)} · ${a.duration_ms!=null?a.duration_ms+' ms':'—'} · ${a.observation_ids.length} obs · ${a.artifact_ids.length} artifacts</div>
+  ${a.envelope_sha256?`<div class="small muted">EMAFIG-FR-1.0 envelope <span class="mono">${esc(a.envelope_sha256.slice(0,16))}…</span></div>`:''}
+  ${a.warnings.map(w=>`<div class="note">${esc(w)}</div>`).join('')}${a.error?`<div class="note bad">${esc(a.error)}</div>`:''}</div>`).join('')}</div>
+  ${c.errors.length?`<h4>Errors</h4>${c.errors.map(e=>`<div class="note bad">${esc(e)}</div>`).join('')}`:''}`}
+
+function obsRow(o){const b=o.baseline||{};return `<tr class="clickable" onclick="why('${esc(o.observation_id)}')">
+  <td><input type="checkbox" class="obs-sel" value="${esc(o.observation_id)}" onclick="event.stopPropagation()"></td>
+  <td><div class="mono">${esc(o.observation_id)}</div><div class="small muted">${esc(o.type)}</div></td>
+  <td>${esc(o.statement)}</td>
+  <td>${badge(b.level)}<div class="small muted">${b.value!=null&&typeof b.value!=='object'?esc(b.value):''} ${b.normal_range?'vs '+esc(b.normal_range):''}</div></td>
+  <td class="small">${esc((o.independence_group||'').split(':')[1]||'')}</td>
+  <td>${badge(o.review_status)}</td>
+  <td onclick="event.stopPropagation()" class="row" style="flex-wrap:nowrap"><button class="sm" onclick="review(['${esc(o.observation_id)}'],'accepted')" ${CASE.sealed?'disabled':''}>✓</button><button class="sm danger" onclick="review(['${esc(o.observation_id)}'],'rejected')" ${CASE.sealed?'disabled':''}>✕</button></td></tr>`}
+function paneObs(c){const f={all:()=>true,flagged:o=>['elevated','high'].includes((o.baseline||{}).level),unreviewed:o=>o.review_status==='unreviewed',accepted:o=>o.review_status==='accepted'}[OBSFILTER];
+  const list=c.observations.filter(f);
+  return `<div class="note info">Nothing unconfirmed reaches the brief. Confirm (✓) what you have checked, reject (✕) what you have not relied on. Click a row to see why the system recorded it.</div>
+  <div class="row between" style="margin:8px 0"><div class="row">${['all','flagged','unreviewed','accepted'].map(k=>`<button class="sm ${OBSFILTER===k?'primary':''}" onclick="OBSFILTER='${k}';render()">${k}</button>`).join('')}</div>
+  <div class="row"><button class="sm" onclick="bulk('accepted')">Confirm selected</button><button class="sm danger" onclick="bulk('rejected')">Reject selected</button></div></div>
+  <table><tr><th><input type="checkbox" onclick="document.querySelectorAll('.obs-sel').forEach(x=>x.checked=this.checked)"></th><th>Observation</th><th>Statement</th><th>Baseline</th><th>Group</th><th>Review</th><th></th></tr>${list.map(obsRow).join('')||'<tr><td colspan=7 class="muted">None.</td></tr>'}</table>
+  <details style="margin-top:14px"><summary>Add a human observation (officer/analyst visual judgement)</summary>
+   <div class="grid2"><div><label>Type</label><input id="oo-type" placeholder="e.g. jawline blending"></div><div><label>Location</label><input id="oo-loc" placeholder="frame 221–238 / 00:14"></div></div>
+   <label>Statement</label><textarea id="oo-stmt"></textarea><label>Alternative explanations (comma separated)</label><input id="oo-alt">
+   <div style="margin-top:8px"><button onclick="addObs()">Add as confirmed observation</button></div></details>`}
+async function review(ids,status){const reason=status==='rejected'?(prompt('Reason for rejecting (recorded in the ledger):')||''):'';await act(U('/review/bulk'),{observation_ids:ids,status,reviewer:who(),reason},`${ids.length} observation(s) ${status}`)}
+function bulk(status){const ids=[...document.querySelectorAll('.obs-sel:checked')].map(x=>x.value);if(!ids.length)return toast('Select observations first',true);review(ids,status)}
+async function addObs(){await act(U('/observations'),{reviewer:who(),type:document.getElementById('oo-type').value||'note',statement:document.getElementById('oo-stmt').value,location:{description:document.getElementById('oo-loc').value},alternative_explanations:document.getElementById('oo-alt').value.split(',').map(s=>s.trim()).filter(Boolean)},'Observation added')}
+
+function why(id){const c=CASE,o=c.observations.find(x=>x.observation_id===id);if(!o)return;const b=o.baseline||{},ar=c.agent_runs[o.agent_id]||{};
+  const row=((c.ach||{}).rows||[]).find(r=>r.group_id===o.independence_group);const ch=(c.challenges||[]).find(x=>x.observation_id===id);
+  const d=document.getElementById('drawer');d.className='drawer open';
+  d.innerHTML=`<div class="row between"><h3 style="margin:0">Why did the system say this?</h3><button class="sm" onclick="document.getElementById('drawer').className='drawer'">Close</button></div>
+  <p>${esc(o.statement)}</p>
+  <div class="kv"><div>Observation</div><div class="mono">${esc(o.observation_id)}</div><div>Source</div><div>${esc(o.source)} · ${esc(o.agent_id)} v${esc(o.agent_version)}</div>
+   <div>Agent run</div><div class="mono">${esc(ar.run_id||'')}</div><div>Input</div><div class="mono">${esc(c.original.artifact_id)} · sha256 ${esc(c.original.sha256.slice(0,24))}…</div>
+   <div>Derivative</div><div class="mono">${esc(o.derivative_id||'original')}</div><div>Location</div><div class="mono">${esc(JSON.stringify(o.location))}</div>
+   <div>Calibrated</div><div>${o.calibrated?'yes':'no'}</div><div>Independence group</div><div class="mono">${esc(o.independence_group)}</div>
+   <div>Review</div><div>${badge(o.review_status)} ${esc(o.reviewed_by||'')} ${esc(o.reviewed_utc||'')} ${esc(o.review_reason||'')}</div></div>
+  <h4>Baseline check ${esc(b.check_id||'')}</h4>
+  <div class="kv"><div>Level</div><div>${badge(b.level)}</div><div>Metric</div><div>${esc(b.metric||'—')}</div><div>Value</div><div class="mono">${esc(typeof b.value==='object'?JSON.stringify(b.value):b.value??'—')}</div>
+   <div>Normal range</div><div>${esc(b.normal_range||'—')}</div><div>Reason</div><div>${esc(b.reason||'')}</div><div>Rationale</div><div>${esc(b.rationale||'')}</div>
+   <div>Reference</div><div>${esc(b.reference||'—')}</div><div>Profile</div><div>${esc(b.profile)} ${esc(b.profile_version)} (uncalibrated)</div></div>
+  <h4>Measurement</h4><pre>${esc(JSON.stringify(o.measurement,null,2))}</pre>
+  ${row?`<h4>ACH cells for this group ${row.diagnostic?'':'(non-diagnostic)'}</h4><div class="row">${Object.entries(row.cells).map(([h,x])=>`<span class="cell c${x.value}" title="${esc(x.reason)}">${h}:${x.value}</span>`).join('')}</div>`:''}
+  <h4>Alternatives &amp; tests not run</h4>${(ch?ch.alternatives:o.alternative_explanations.map(a=>({explanation:a}))).map(a=>`<div class="note">${esc(a.explanation)}${a.discriminating_test?` — <i>${esc(a.discriminating_test)}</i> ${a.test_run?'(run)':'(not run)'}`:''}</div>`).join('')||'<div class="muted small">None recorded.</div>'}
+  ${o.not_tested.length?`<div class="small muted">Not tested: ${esc(o.not_tested.join('; '))}</div>`:''}
+  <h4>Limitations</h4>${o.limitations.map(l=>`<div class="small">• ${esc(l)}</div>`).join('')}`}
+
+function paneRisk(c){const rk=c.risk||{},t=c.triage||{};return `<div class="grid2">
+  <div class="card"><div class="row between"><b>Deterministic baseline risk index</b>${badge(rk.band)}</div>
+   <div style="font-size:34px;font-weight:800;color:${riskColor(rk.risk_score||0)}">${rk.risk_score??'—'}<span class="muted" style="font-size:16px">/100</span></div>
+   <div class="small muted">${esc(rk.method||'')}</div><div class="note">${esc(rk.interpretation||'')}</div>
+   <table><tr><th>Group</th><th>Level</th><th>Weight</th><th>Contribution</th></tr>${(rk.contributions||[]).map(x=>`<tr class="clickable" onclick="why('${esc(x.driver)}')"><td class="small">${esc(x.family)}<div class="muted">${esc(x.reason||'')}</div>${x.correlated_observations_counted_once>1?`<div class="small" style="color:var(--violet)">${x.correlated_observations_counted_once} correlated observations counted once</div>`:''}</td><td>${badge(x.level)}</td><td>${x.weight}</td><td>${x.contribution}</td></tr>`).join('')||'<tr><td colspan=4 class="muted">No check deviates from its baseline.</td></tr>'}</table></div>
+  <div class="card"><div class="row between"><b>Triage estimate</b><span class="badge b-vio">${esc(t.provider||'—')}</span></div>
+   <div class="row" style="margin:8px 0"><div style="font-size:34px;font-weight:800">${t.probability_manipulated!=null?Number(t.probability_manipulated).toFixed(2):'—'}</div>${badge(t.likelihood_band)}<span class="small muted">confidence in estimate: ${esc(t.estimate_confidence||'—')}</span></div>
+   <div class="note bad"><b>${esc((t.probability_label||'').replace(/_/g,' '))}.</b> ${esc(t.policy||'')}</div>
+   <b class="small">Reasoning</b>${(t.reasoning||[]).map(r=>`<div class="small">• ${esc(r)}</div>`).join('')}
+   <b class="small">Key observations</b><div>${(t.key_observations||[]).map(i=>`<button class="sm" onclick="why('${esc(i)}')">${esc(i)}</button>`).join(' ')||'<span class="muted small">none</span>'}</div>
+   <b class="small">Counter-indicators</b>${(t.counter_indicators||[]).map(r=>`<div class="small">• ${esc(r)}</div>`).join('')||'<div class="small muted">none</div>'}</div></div>
+  <h4>All baseline checks</h4><table><tr><th>Observation</th><th>Check</th><th>Value</th><th>Normal range</th><th>Level</th></tr>${c.observations.filter(o=>(o.baseline||{}).check_id).map(o=>{const b=o.baseline;return `<tr class="clickable" onclick="why('${esc(o.observation_id)}')"><td class="small">${esc(o.type)}</td><td class="small">${esc(b.check_id)} · ${esc(b.metric||'')}</td><td class="mono">${esc(typeof b.value==='object'?JSON.stringify(b.value):b.value??'—')}</td><td class="small">${esc(b.normal_range||b.reason||'')}</td><td>${badge(b.level)}</td></tr>`}).join('')}</table>
+  <div class="small muted" style="margin-top:8px">Profile <a href="/api/baselines" target="_blank">${esc(c.baseline_profile)}</a>: hand-set defaults, not calibrated on labelled data.</div>`}
+
+function paneACH(c){const a=c.ach||{};if(!a.rows)return '<div class="muted">ACH not computed yet.</div>';const H=a.hypotheses.map(h=>h.id);const rc=a.ranking_confirmed,rp=a.ranking_provisional;
+  return `<div class="note info">Rows are independence groups (correlated detectors merged). Click a cell to change C → I → N; greyed rows are non-diagnostic. Rank = fewest I cells. This is a ranking, never a probability.</div>
+  <table><tr><th>Line of evidence</th>${a.hypotheses.map(h=>`<th title="${esc(h.label)}: ${esc(h.description)}">${h.id}</th>`).join('')}<th>Status</th></tr>
+  ${a.rows.map(r=>`<tr class="${r.diagnostic?'':'nd'}"><td><div class="small"><b>${esc(r.family)}</b> ${badge(r.level)}</div><div class="small muted">${r.observation_ids.length} obs · ${esc(r.group_id.split(':')[0])}</div></td>
+   ${H.map(h=>{const x=r.cells[h];return `<td><div class="cell c${x.value} ${x.edited?'edited':''}" title="${esc(x.proposed_by)}: ${esc(x.reason)}" onclick="cycle('${esc(r.group_id)}','${h}','${x.value}')">${x.value}</div></td>`}).join('')}
+   <td class="small">${r.provisional?'<span class="badge b-mute">provisional</span>':'<span class="badge b-ok">confirmed</span>'}</td></tr>`).join('')}</table>
+  <div class="grid2" style="margin-top:12px"><div class="card"><b>Ranking over confirmed rows</b><div>${rc?rc.ranking.map(h=>`${h} (${rc.scores[h]} I)`).join(' · '):'<span class="muted">Confirm observations first.</span>'}</div>
+   <b class="small">Provisional (all non-rejected rows)</b><div class="small muted">${rp.ranking.map(h=>`${h} (${rp.scores[h]})`).join(' · ')}</div>
+   <div class="small muted">Assessor: ${esc(a.assessor)}</div></div>
+   <div class="card"><b>Contradictions</b>${(c.contradictions||[]).map(x=>`<div class="note">${x.hypothesis_id}: consistent with ${esc(x.consistent_groups.map(g=>g.split(':')[1]).join(', '))} but inconsistent with ${esc(x.inconsistent_groups.map(g=>g.split(':')[1]).join(', '))} — ${x.status}</div>`).join('')||'<div class="muted small">None recorded.</div>'}</div></div>
+  <div class="row" style="margin-top:12px">${a.accepted_by?`<span class="badge b-ok">Accepted by ${esc(a.accepted_by)} at ${esc(a.accepted_utc)}</span>`:''}<button class="primary" onclick="act(U('/ach/accept'),{analyst:who()},'ACH matrix accepted')" ${c.sealed?'disabled':''}>Accept matrix (gate S7)</button></div>`}
+async function cycle(g,h,v){const nv={C:'I',I:'N',N:'C'}[v];const reason=prompt(`Set ${h} to ${nv} for ${g.split(':')[1]}. Reason (recorded):`);if(reason===null)return;await act(U('/ach/edit'),{group_id:g,hypothesis_id:h,value:nv,reason,editor:who()},'Cell updated; acceptance reset')}
+
+function paneChal(c){return `<div class="note info">The skeptic tries to explain each finding without manipulation. Each alternative lists the test that would tell them apart.</div>`+
+  ((c.challenges||[]).map(ch=>{const o=c.observations.find(x=>x.observation_id===ch.observation_id)||{};return `<div class="card" style="margin:8px 0"><div class="row between"><div><span class="mono">${esc(ch.observation_id)}</span> <span class="small muted">${esc(o.type||'')}</span></div><span class="badge b-mute">${esc(ch.provider)}</span></div>
+   <div class="small">${esc(o.statement||'')}</div>${ch.no_alternative_found?'<div class="note bad">No defensible innocent alternative found.</div>':''}
+   ${ch.alternatives.map(a=>`<div class="note"><b>${esc(a.explanation)}</b> — ${esc(a.discriminating_test)} ${a.test_run?badge('completed'):'<span class="badge b-warn">not run</span>'}</div>`).join('')}</div>`}).join('')||'<div class="muted">No flagged or confirmed observations to challenge.</div>')}
+
+function paneGaps(c){const cl=(c.missing_evidence||[]).filter(g=>g.kind==='checklist'),pl=(c.missing_evidence||[]).filter(g=>g.kind==='pipeline');
+  return `<table><tr><th>Evidence</th><th>Collection action</th><th>Status</th></tr>${cl.map(g=>`<tr><td><b>${esc(g.label)}</b>${g.note?`<div class="small muted">${esc(g.note)}</div>`:''}</td><td class="small">${esc(g.action)}</td>
+   <td><select onchange="act(U('/evidence-status'),{item:'${esc(g.item)}',status:this.value,officer:who()},'Checklist updated')" ${c.sealed?'disabled':''}>${['missing','collected','unavailable','not_applicable'].map(s=>`<option ${g.status===s?'selected':''}>${s}</option>`).join('')}</select></td></tr>`).join('')}</table>
+  <h4>Pipeline limitations</h4>${pl.map(g=>`<div class="note ${g.status==='failed'?'bad':''}"><b>${esc(g.item)}</b> ${esc(g.status)}: ${esc(Array.isArray(g.impact)?g.impact.join(' | '):g.impact)}</div>`).join('')||'<div class="muted small">None.</div>'}`}
+
+function paneLegal(c){const L=c.legal||{},f=L.facts||{},spec=LEGALSPEC.facts;const prop=new Set((L.proposals||[]).map(p=>p.circumstance_key)),conf=new Set(L.confirmed_keys||[]);
+  return `<div class="note info">Decision support, not legal advice. Sections come only from the versioned rules table (${esc(LEGALSPEC.version)}); Bob may propose circumstances but never section numbers. A legal officer must confirm.</div>
+  <div class="card"><b>1. Case facts</b><div class="grid3">${Object.entries(spec).map(([k,t])=>`<div><label>${esc(k.replace(/_/g,' '))}</label>${t==='boolean'?`<select id="lf-${k}"><option value="">not set</option><option value="true" ${f[k]===true?'selected':''}>yes</option><option value="false" ${f[k]===false?'selected':''}>no</option></select>`:`<select id="lf-${k}"><option value="">not set</option>${t.map(x=>`<option ${f[k]===x?'selected':''}>${x}</option>`).join('')}</select>`}</div>`).join('')}</div>
+   <div style="margin-top:10px"><button onclick="legalPropose()" ${c.sealed?'disabled':''}>Save facts &amp; ask legal-proposer</button> ${L.proposed_by?`<span class="small muted">proposed by ${esc(L.proposed_by)}</span>`:''}</div></div>
+  ${L.all_rules?`<div class="card" style="margin-top:12px"><b>2. Circumstances</b> <span class="small muted">tick the ones you confirm</span><table><tr><th></th><th>Circumstance</th><th>Applicability</th><th>Candidate sections</th></tr>
+   ${L.all_rules.map(r=>`<tr class="${r.applicable?'':'nd'}"><td><input type="checkbox" class="lc" value="${esc(r.key)}" ${conf.has(r.key)||(!L.confirmed_by&&prop.has(r.key))?'checked':''}></td>
+    <td><b>${esc(r.label)}</b> ${prop.has(r.key)?'<span class="badge b-blue">proposed</span>':''}<div class="small muted">RULE-${esc(r.key)}</div>${(L.proposals||[]).filter(p=>p.circumstance_key===r.key).map(p=>`<div class="small">${esc(p.reasoning)}</div>${p.wording_concern?`<div class="note">${esc(p.wording_concern)}</div>`:''}`).join('')}</td>
+    <td class="small">${r.applicable?badge('applicable'):esc(r.reason)}${r.escalation_required?'<div class="note bad">Escalate immediately</div>':''}</td>
+    <td class="small">${r.sections.map(s=>`<div>${s.excluded?`<s>${esc(s.act)} ${esc(s.section)}</s> <span class="badge b-bad">excluded</span> ${esc(s.exclusion_reason)}`:`${esc(s.act)} ${esc(s.section)} — ${esc(s.title)} ${badge(s.status)}`}</div>`).join('')}<div class="muted">Needs: ${esc(r.evidence_needed.join(', '))}</div></td></tr>`).join('')}</table>
+   <div class="row" style="margin-top:10px">${L.confirmed_by?`<span class="badge b-ok">Confirmed by ${esc(L.confirmed_by)}</span>`:''}<button class="primary" onclick="legalConfirm()" ${c.sealed?'disabled':''}>Confirm selected circumstances (gate S9)</button></div></div>`:''}`}
+function legalFacts(){const f={};for(const[k,t]of Object.entries(LEGALSPEC.facts)){const v=document.getElementById('lf-'+k).value;if(v==='')continue;f[k]=t==='boolean'?v==='true':v}return f}
+async function legalPropose(){await act(U('/legal'),{officer:who(),facts:legalFacts()},'Legal circumstances proposed')}
+async function legalConfirm(){await act(U('/legal'),{officer:who(),facts:legalFacts(),confirmed_circumstances:[...document.querySelectorAll('.lc:checked')].map(x=>x.value)},'Legal mapping confirmed')}
+
+function paneReport(c){const b=c.brief||{},aa=c.analyst_assessment||{},so=c.signoffs||[];const has=r=>c.reports&&c.reports[r];
+  const gate=[['At least one confirmed observation',c.observations.some(o=>o.review_status==='accepted')],['ACH matrix accepted',!!(c.ach||{}).accepted_by],['Legal circumstances confirmed',!!(c.legal||{}).confirmed_by],['Draft generated and current',has('brief')&&!(c.human_review||{}).report_stale]];
+  return `<div class="grid2"><div class="card"><b>Analyst assessment</b><div class="small muted">Your own words. Every evidence sentence must cite an ID, e.g. [${esc((c.observations.find(o=>o.review_status==='accepted')||{}).observation_id||'OBS-…')}]. The Verifier checks as you type.</div>
+   <textarea id="aa-text" oninput="liveVerify()" ${c.sealed?'disabled':''}>${esc(aa.text||'')}</textarea><div id="aa-verify" class="small"></div>
+   <button onclick="act(U('/assessment'),{analyst:who(),text:document.getElementById('aa-text').value},'Assessment saved')" ${c.sealed?'disabled':''}>Save assessment</button></div>
+  <div class="card"><b>Sign-off gates</b>${gate.map(([l,ok])=>`<div class="small">${ok?'✅':'⬜'} ${l}</div>`).join('')}
+   <div class="row" style="margin-top:10px"><button class="primary" onclick="genReport()" ${c.sealed?'disabled':''}>Generate draft report</button></div>
+   <div style="margin-top:10px">${['officer','supervisor'].map(r=>{const s=so.find(x=>x.role===r);return `<div class="row between" style="margin:4px 0"><span>${r}</span>${s?`<span class="small">✅ ${esc(s.reviewer)} · ${esc(s.at.slice(0,19))}</span>`:`<button class="sm" onclick="signoff('${r}')" ${c.sealed?'disabled':''}>Sign as ${r}</button>`}</div>`}).join('')}</div>
+   ${c.sealed?`<div class="note ok">Sealed. Report hash <span class="mono">${esc(c.ledger.report_hash)}</span><br>Final ledger head <span class="mono">${esc(c.ledger.final_head)}</span></div>`:''}</div></div>
+  ${has('brief')?`<div class="row" style="margin:14px 0 6px">${[['brief','Brief'],['markdown','Technical report'],['certificate','BSA 63(4) certificate'],['evidence_matrix','Evidence matrix'],['victim_guide_en','Victim guide (EN)'],['victim_guide_hi','Victim guide (HI)'],['triage','Triage (internal)'],['manifest','Package manifest'],['json','JSON package']].filter(([k])=>has(k)).map(([k,l])=>`<button class="sm" onclick="viewFile('${k}')">${l}</button> <a class="small" href="${U('/report/'+k)}?download=true">⤓</a>`).join(' ')}</div>
+   <div id="file-view"></div>
+   <h3>Investigation brief ${b.unsupported_sentences?`<span class="badge b-bad">${b.unsupported_sentences} unsupported</span>`:'<span class="badge b-ok">all sentences verified</span>'}</h3>
+   <div class="small muted">Drafted by ${esc(b.drafted_by)} · entailment checked by ${esc(b.entailment_checked_by||'—')}</div>
+   ${(b.sections||[]).map(s=>`<h4>${esc(s.title)}</h4>${s.results.map(r=>r.passed?`<div class="sent">${esc(r.sentence)}</div>`:`<div class="sent fail"><b>Rejected by Verifier:</b> ${esc(r.problems.join('; '))}<br><s>${esc(r.sentence)}</s></div>`).join('')||'<div class="muted small">None.</div>'}`).join('')}`:'<div class="muted" style="margin-top:14px">No draft yet.</div>'}`}
+let VT=null;function liveVerify(){clearTimeout(VT);VT=setTimeout(async()=>{const text=document.getElementById('aa-text').value;if(!text.trim()){document.getElementById('aa-verify').innerHTML='';return}
+  const r=await api(U('/verify'),{json:{text}});document.getElementById('aa-verify').innerHTML=r.results.filter(x=>!x.passed).map(x=>`<div class="note bad">“${esc(x.sentence)}” — ${esc(x.problems.join('; '))}</div>`).join('')||'<div class="note ok">All sentences pass the deterministic Verifier.</div>'},400)}
+async function genReport(){toast('Drafting and verifying…');await act(U('/report'),{}, 'Draft generated')}
+async function signoff(role){const statement=prompt(`Sign-off statement as ${role}:`,'I have reviewed the evidence package and approve release of this draft for further action.');if(!statement)return;await act(U('/signoff'),{reviewer:who(),role,statement},'Signed as '+role)}
+async function viewFile(k){const t=await api(U('/report/'+k));document.getElementById('file-view').innerHTML=`<pre>${esc(typeof t==='string'?t:JSON.stringify(t,null,2))}</pre>`}
+function loadReportFiles(){}
+async function loadLedger(){const r=await api(U('/ledger'));const el=document.getElementById('ledger-body');if(!el)return;
+  el.innerHTML=`<div class="note ${r.verification.valid?'ok':'bad'}">Chain ${r.verification.valid?'VALID':'INVALID'} · ${r.verification.entries} entries · head <span class="mono">${esc(r.verification.head||r.verification.error)}</span></div>
+  <table><tr><th>#</th><th>Time</th><th>Event</th><th>Hash</th></tr>${r.entries.slice().reverse().map(e=>`<tr><td>${e.seq}</td><td class="small">${esc(e.ts.slice(0,19))}</td><td><b class="small">${esc(e.event)}</b><details><summary>data</summary><pre>${esc(JSON.stringify(e.data,null,2))}</pre></details></td><td class="mono">${esc(e.hash.slice(0,16))}…</td></tr>`).join('')}</table>`}
+function paneLedger(){return '<div id="ledger-body" class="muted">Loading…</div>'}
+async function rerun(){toast('Asking Bob…');await act(U('/reason'),{}, 'Reasoning refreshed')}
+window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(id&&(!CASE||CASE.case_id!==id))show(id)});
+setInterval(()=>{if(!CASE||!['queued','running'].includes(CASE.status))refreshCases()},10000);
+init();
+</script>
+</body></html>

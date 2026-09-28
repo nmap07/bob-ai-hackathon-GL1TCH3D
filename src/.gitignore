@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+cases/
+working_uploads/
+models/
+.env
+*.lock
+# never commit real evidence
+samples/real/

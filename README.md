@@ -9,10 +9,12 @@
 
 | Role | Name | Email |
 |---|---|---|
-| Team name | CHANGE_ME_TEAM_NAME | |
+| Team name | GL1TCH3D | |
 | Track | AI | |
-| Lead | CHANGE_ME_LEAD_NAME | CHANGE_ME@ibm.com |
-| Member | CHANGE_ME_MEMBER_NAME | CHANGE_ME@ibm.com |
+| Lead | ATHARVA SINGH | princesingh.3045@gmail.com |
+| Member | JANYA PARIKH | janyaparikh@gmail.com |
+| Member | MAHARSHI PATEL |maharshipatel75139@gmail.com |
+| Member | ATHARVA PALLIVAL | paliwal.atharv08@gmail.com |
 
 ## Problem Statement
 

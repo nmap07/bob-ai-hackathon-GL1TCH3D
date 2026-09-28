@@ -1,26 +1,8 @@
-# Screenshots
+# Screenshots (add at least 3)
 
-Place your application screenshots in this folder.
+Capture these from the **running** app and save them in this folder with these exact names, then delete this note if you like:
 
-## Naming Convention
-
-Name your screenshots sequentially so they appear in logical order:
-
-  01-landing-page.png       ← First thing a user sees
-  02-main-feature.png       ← Your primary feature in action
-  03-output-or-results.png  ← The result / value delivered
-  04-additional-feature.png ← Any other notable screen
-
-## Requirements
-
-- Minimum: 3 screenshots
-- Format: PNG or JPG
-- Show the application running with real (or realistic mock) data
-- Avoid screenshots of empty states or placeholder data
-- Captions are not required but appreciated
-
-## Tips
-
-- Use a consistent browser window size across all screenshots
-- Highlight key UI elements with arrows/circles if helpful (use any image editor)
-- Include a screenshot showing IBM technology integration if applicable
+1. `01-home-dashboard.png` — GUI at http://127.0.0.1:8000 before/after upload (header shows `Bob: mock`, cases list on the left)
+2. `02-agent-grid-observations.png` — case view with SHA-256, agent execution grid and observation cards
+3. `03-hypotheses-gaps-report.png` — competing hypotheses table, evidence gaps, and the report/JSON links after **Generate report**
+4. (recommended) `04-bob-mcp-tools.png` — Bob IDE with `emafg-forensics` connected and a tool call such as `verify_audit_ledger`

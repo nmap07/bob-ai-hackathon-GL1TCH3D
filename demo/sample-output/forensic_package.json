@@ -1,0 +1,1044 @@
+{
+  "schema_version": "EMAFIG-EVIDENCE-1.0",
+  "generated_utc": "2026-09-28T09:49:43.089083Z",
+  "case": {
+    "case_id": "CASE-20260928T094939-3e3508a6bae8",
+    "evidence_id": "EVD-5ed33e0699be",
+    "filename": "demo_clip.mp4",
+    "media_type": "video",
+    "status": "awaiting_review",
+    "stage": "report",
+    "created_utc": "2026-09-28T09:49:39.886377Z",
+    "updated_utc": "2026-09-28T09:49:43.022352Z",
+    "source_description": "controlled demonstration",
+    "original": {
+      "artifact_id": "ART-9d43edabdbe3",
+      "path": "/home/claude/verify2/cases/CASE-20260928T094939-3e3508a6bae8/original/demo_clip.mp4",
+      "type": "video",
+      "size_bytes": 95699,
+      "sha256": "ab5a55f617899289e5cfd23f37b9958366c6284542e309f5bac73f13bf30ea89",
+      "sha512": "19034ae61ede66203e1794c1be16eab2ce544cac81e8cd73a47716cd986dc7e75d010d25402659e4e8a347a0e20b46361983f03d096831fa912784779d2e9372",
+      "parent_artifact_id": null
+    },
+    "agent_runs": {
+      "metadata-analysis": {
+        "agent_id": "metadata-analysis",
+        "version": "2.0.0",
+        "status": "completed_with_warnings",
+        "started_utc": "2026-09-28T09:49:39.891624Z",
+        "ended_utc": "2026-09-28T09:49:40.395985Z",
+        "duration_ms": 504,
+        "observation_ids": [
+          "OBS-51dbfb5844c1",
+          "OBS-15d0eefdc743",
+          "OBS-3fbd1281222c",
+          "OBS-7925817865fa",
+          "OBS-6de3a2ce9670",
+          "OBS-e32d1bfa91c2",
+          "OBS-25bf062ee141",
+          "OBS-9b98ea4a3378",
+          "OBS-ae0093c308ff",
+          "OBS-9766f84ae88d",
+          "OBS-751fa257b4cf",
+          "OBS-57fe6b4a13a7"
+        ],
+        "artifact_ids": [
+          "bd0a567d0124a3a7"
+        ],
+        "warnings": [
+          "ExifTool not installed; detailed EXIF/XMP/IPTC metadata not extracted."
+        ],
+        "error": null
+      },
+      "compression-analysis": {
+        "agent_id": "compression-analysis",
+        "version": "2.0.0",
+        "status": "completed",
+        "started_utc": "2026-09-28T09:49:39.893488Z",
+        "ended_utc": "2026-09-28T09:49:40.073067Z",
+        "duration_ms": 180,
+        "observation_ids": [
+          "OBS-3f42e2abce41"
+        ],
+        "artifact_ids": [
+          "bc9dbdb1a609e0ef"
+        ],
+        "warnings": [],
+        "error": null
+      },
+      "visual-forensics": {
+        "agent_id": "visual-forensics",
+        "version": "2.0.0",
+        "status": "completed",
+        "started_utc": "2026-09-28T09:49:39.911614Z",
+        "ended_utc": "2026-09-28T09:49:43.018925Z",
+        "duration_ms": 3106,
+        "observation_ids": [
+          "OBS-50ccead0f930",
+          "OBS-bd12c620908e",
+          "OBS-9ba85281f9ef"
+        ],
+        "artifact_ids": [
+          "ebc3fa1fb15b1d03",
+          "f8832b38ebb50295",
+          "8f66a25dfa7ba181",
+          "fee32711bf1f3bb7",
+          "1a0f0026ac0b0b81",
+          "d5c5fd234dce628f",
+          "1cb530b614bb4eaa",
+          "0b7217566e4cf6ff",
+          "25f366432fc53c39",
+          "ec0ca48eed5f762a",
+          "21fee8cd961929e4",
+          "62c82a237548141c",
+          "d04abeadd8748382",
+          "0b18c2e133e80c69",
+          "73d984eefbbd6e23",
+          "225b919e40ae491a",
+          "5dd777a1d12aa35b",
+          "478be3ab69ac1b7c",
+          "b2c685c59f43206c",
+          "f74da3995ad6fae9",
+          "27b7287af749fc5f",
+          "59761e015c8a645f",
+          "af3dcf60eb2c9734",
+          "2c76a4c0e4ca1600",
+          "bb26ad510d613f34",
+          "93dafab349581af5",
+          "4e5400deafcad04e",
+          "8911acbbcb46afd2",
+          "a8c152fc1352e7f5",
+          "5f9983eaa55ea7f9",
+          "022d50aec7876dff",
+          "1106da7bcb9dbe20",
+          "ceef9a2f05f67f51",
+          "3a21d7ede6b002bc"
+        ],
+        "warnings": [],
+        "error": null
+      },
+      "audio-forensics": {
+        "agent_id": "audio-forensics",
+        "version": "2.1.0",
+        "status": "completed_with_warnings",
+        "started_utc": "2026-09-28T09:49:39.939721Z",
+        "ended_utc": "2026-09-28T09:49:42.431404Z",
+        "duration_ms": 2492,
+        "observation_ids": [
+          "OBS-5d28b84bf498"
+        ],
+        "artifact_ids": [
+          "d4b7bb0b8013f7ba"
+        ],
+        "warnings": [
+          "AASIST model not installed. Place aasist.onnx under models/audio or set AASIST_MODEL."
+        ],
+        "error": null
+      },
+      "temporal-analysis": {
+        "agent_id": "temporal-analysis",
+        "version": "2.0.0",
+        "status": "completed",
+        "started_utc": "2026-09-28T09:49:39.987895Z",
+        "ended_utc": "2026-09-28T09:49:40.375217Z",
+        "duration_ms": 388,
+        "observation_ids": [
+          "OBS-9cbf5c474ded"
+        ],
+        "artifact_ids": [
+          "2d07494a64bd8156"
+        ],
+        "warnings": [],
+        "error": null
+      },
+      "av-sync-analysis": {
+        "agent_id": "av-sync-analysis",
+        "version": "2.0.0",
+        "status": "completed",
+        "started_utc": "2026-09-28T09:49:40.019617Z",
+        "ended_utc": "2026-09-28T09:49:40.316304Z",
+        "duration_ms": 296,
+        "observation_ids": [
+          "OBS-ead334147888"
+        ],
+        "artifact_ids": [],
+        "warnings": [],
+        "error": null
+      },
+      "c2pa-provenance": {
+        "agent_id": "c2pa-provenance",
+        "version": "2.0.0",
+        "status": "completed_with_warnings",
+        "started_utc": "2026-09-28T09:49:40.051488Z",
+        "ended_utc": "2026-09-28T09:49:40.351527Z",
+        "duration_ms": 299,
+        "observation_ids": [
+          "OBS-0821fe69a49a"
+        ],
+        "artifact_ids": [],
+        "warnings": [
+          "c2patool unavailable; provenance was not cryptographically verified."
+        ],
+        "error": null
+      }
+    },
+    "observations": [
+      {
+        "observation_id": "OBS-3f42e2abce41",
+        "agent_id": "compression-analysis",
+        "agent_version": "2.0.0",
+        "type": "compression.sharpness_screen",
+        "statement": "Sampled frame sharpness using Laplacian variance; mean 910.14.",
+        "location": {},
+        "measurement": {
+          "mean_laplacian_variance": 910.1447085902297,
+          "std": 10.908659509380957
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [
+          "focus",
+          "resize",
+          "denoising",
+          "codec quantization",
+          "source-camera processing"
+        ],
+        "limitations": [
+          "This is a screening metric, not a compression/deepfake classifier."
+        ],
+        "calibrated": false,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-ead334147888",
+        "agent_id": "av-sync-analysis",
+        "agent_version": "2.0.0",
+        "type": "av_sync.stream_start_offset",
+        "statement": "Container-reported video/audio start-time difference is 0.00 ms.",
+        "location": {},
+        "measurement": {
+          "offset_ms": 0.0,
+          "video_start_s": 0.0,
+          "audio_start_s": 0.0
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [
+          "container timestamps",
+          "muxing delay",
+          "VFR",
+          "decoder behavior"
+        ],
+        "limitations": [
+          "This is stream-level timing, not phoneme-to-mouth synchronization."
+        ],
+        "calibrated": false,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-0821fe69a49a",
+        "agent_id": "c2pa-provenance",
+        "agent_version": "2.0.0",
+        "type": "provenance.c2pa_marker_screen",
+        "statement": "No C2PA-related byte markers were detected.",
+        "location": {},
+        "measurement": {
+          "marker_detected": false,
+          "verified": false
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [
+          "unsupported embedding",
+          "stripped metadata"
+        ],
+        "limitations": [
+          "Marker screen is not C2PA verification. Install c2patool or c2pa-python for actual manifest validation."
+        ],
+        "calibrated": false,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-9cbf5c474ded",
+        "agent_id": "temporal-analysis",
+        "agent_version": "2.0.0",
+        "type": "temporal.cadence",
+        "statement": "Measured 150 video packet timestamps; median PTS interval 0.040000s.",
+        "location": {},
+        "measurement": {
+          "packet_count": 150,
+          "median_interval_s": 0.040000000000000036,
+          "anomaly_count": 0,
+          "anomaly_indices": []
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [
+          "variable frame rate",
+          "container timestamp behavior",
+          "transcoding"
+        ],
+        "limitations": [
+          "Packet timing anomalies are not proof of editing or synthesis."
+        ],
+        "calibrated": false,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-51dbfb5844c1",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.container",
+        "statement": "container observed as 'mov,mp4,m4a,3gp,3g2,mj2'.",
+        "location": {},
+        "measurement": {
+          "value": "mov,mp4,m4a,3gp,3g2,mj2"
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-15d0eefdc743",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.duration_seconds",
+        "statement": "duration_seconds observed as '6.000000'.",
+        "location": {},
+        "measurement": {
+          "value": "6.000000"
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-3fbd1281222c",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.format_tags",
+        "statement": "format_tags observed as {'major_brand': 'isom', 'minor_version': '512', 'compatible_brands': 'isomiso2avc1mp41', 'encoder': 'Lavf60.16.100'}.",
+        "location": {},
+        "measurement": {
+          "value": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf60.16.100"
+          }
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-7925817865fa",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.video_codec",
+        "statement": "video_codec observed as 'h264'.",
+        "location": {},
+        "measurement": {
+          "value": "h264"
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-6de3a2ce9670",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.resolution",
+        "statement": "resolution observed as [640, 360].",
+        "location": {},
+        "measurement": {
+          "value": [
+            640,
+            360
+          ]
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-e32d1bfa91c2",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.r_frame_rate",
+        "statement": "r_frame_rate observed as '25/1'.",
+        "location": {},
+        "measurement": {
+          "value": "25/1"
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-25bf062ee141",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.avg_frame_rate",
+        "statement": "avg_frame_rate observed as '25/1'.",
+        "location": {},
+        "measurement": {
+          "value": "25/1"
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-9b98ea4a3378",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.audio_codec",
+        "statement": "audio_codec observed as 'aac'.",
+        "location": {},
+        "measurement": {
+          "value": "aac"
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-ae0093c308ff",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.audio_sample_rate",
+        "statement": "audio_sample_rate observed as '44100'.",
+        "location": {},
+        "measurement": {
+          "value": "44100"
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-9766f84ae88d",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.audio_channels",
+        "statement": "audio_channels observed as 1.",
+        "location": {},
+        "measurement": {
+          "value": 1
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-751fa257b4cf",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.stream_count",
+        "statement": "stream_count observed as 2.",
+        "location": {},
+        "measurement": {
+          "value": 2
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-57fe6b4a13a7",
+        "agent_id": "metadata-analysis",
+        "agent_version": "2.1.0",
+        "type": "metadata.encoder",
+        "statement": "encoder observed as 'Lavc60.31.102 libx264'.",
+        "location": {},
+        "measurement": {
+          "value": "Lavc60.31.102 libx264"
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Metadata is descriptive and may reflect post-processing."
+        ],
+        "calibrated": true,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-5d28b84bf498",
+        "agent_id": "audio-forensics",
+        "agent_version": "2.1.0",
+        "type": "audio.spectral_profile",
+        "statement": "Audio decoded at 16000 Hz; 3 spectral-flux spikes exceeded the 3-sigma screening threshold.",
+        "location": {},
+        "measurement": {
+          "duration_s": 6.014,
+          "sample_rate": 16000,
+          "rms_mean": 0.08796395361423492,
+          "rms_std": 0.002539644483476877,
+          "spectral_centroid_mean": 448.3347550372671,
+          "spectral_flux_spikes": 3,
+          "spike_indices": [
+            0,
+            1,
+            186
+          ]
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [
+          "H2",
+          "H3",
+          "H5"
+        ],
+        "contradicts": [],
+        "alternative_explanations": [
+          "speech consonants",
+          "background events",
+          "editing boundaries",
+          "codec behavior"
+        ],
+        "limitations": [
+          "Spectral discontinuity is not specific to synthetic speech."
+        ],
+        "calibrated": false,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-50ccead0f930",
+        "agent_id": "visual-forensics",
+        "agent_version": "2.1.0",
+        "type": "visual.video_frame_sample",
+        "statement": "Extracted 32 frames from video for visual analysis.",
+        "location": {},
+        "measurement": {
+          "frames_sampled": 32,
+          "first_frame_idx": 0,
+          "last_frame_idx": 124,
+          "first_ts_s": 0.0,
+          "last_ts_s": 4.96
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [],
+        "limitations": [
+          "Sampled frames represent a subset of the full video."
+        ],
+        "calibrated": false,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-bd12c620908e",
+        "agent_id": "visual-forensics",
+        "agent_version": "2.1.0",
+        "type": "visual.face_detection",
+        "statement": "Detected 0 face instance(s) across 32 sampled frame(s).",
+        "location": {},
+        "measurement": {
+          "frames_examined": 32,
+          "faces_detected": 0,
+          "face_detection_rate": 0.0,
+          "cascade_available": true
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [
+          "occlusion",
+          "extreme pose",
+          "low resolution",
+          "non-human subjects",
+          "mask/glasses"
+        ],
+        "limitations": [
+          "Haar-based detection is a screening signal.",
+          "Zero detections do not indicate absence of a person."
+        ],
+        "calibrated": false,
+        "review_status": "unreviewed"
+      },
+      {
+        "observation_id": "OBS-9ba85281f9ef",
+        "agent_id": "visual-forensics",
+        "agent_version": "2.1.0",
+        "type": "visual.video_sharpness_profile",
+        "statement": "Frame sharpness (Laplacian variance): mean=833.75, std=75.49 across 32 sampled frames.",
+        "location": {},
+        "measurement": {
+          "mean_sharpness": 833.75,
+          "std_sharpness": 75.485,
+          "frame_count": 32
+        },
+        "basis": [
+          "EVD-5ed33e0699be"
+        ],
+        "supports": [],
+        "contradicts": [],
+        "alternative_explanations": [
+          "motion blur",
+          "focus changes",
+          "transcoding",
+          "scene changes"
+        ],
+        "limitations": [
+          "Sharpness variation alone is not indicative of manipulation."
+        ],
+        "calibrated": false,
+        "review_status": "unreviewed"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "H1",
+        "label": "Authentic recording",
+        "description": "The submitted media is consistent with an authentic capture, subject to gaps and limitations.",
+        "support_observation_ids": [],
+        "contradiction_observation_ids": [],
+        "uninformative_observation_ids": [
+          "OBS-3f42e2abce41",
+          "OBS-ead334147888",
+          "OBS-0821fe69a49a",
+          "OBS-9cbf5c474ded",
+          "OBS-51dbfb5844c1",
+          "OBS-15d0eefdc743",
+          "OBS-3fbd1281222c",
+          "OBS-7925817865fa",
+          "OBS-6de3a2ce9670",
+          "OBS-e32d1bfa91c2",
+          "OBS-25bf062ee141",
+          "OBS-9b98ea4a3378",
+          "OBS-ae0093c308ff",
+          "OBS-9766f84ae88d",
+          "OBS-751fa257b4cf",
+          "OBS-57fe6b4a13a7",
+          "OBS-5d28b84bf498",
+          "OBS-50ccead0f930",
+          "OBS-bd12c620908e",
+          "OBS-9ba85281f9ef"
+        ]
+      },
+      {
+        "id": "H2",
+        "label": "Manipulated face/content",
+        "description": "Some media content was altered after capture or generated synthetically.",
+        "support_observation_ids": [
+          "OBS-5d28b84bf498"
+        ],
+        "contradiction_observation_ids": [],
+        "uninformative_observation_ids": [
+          "OBS-3f42e2abce41",
+          "OBS-ead334147888",
+          "OBS-0821fe69a49a",
+          "OBS-9cbf5c474ded",
+          "OBS-51dbfb5844c1",
+          "OBS-15d0eefdc743",
+          "OBS-3fbd1281222c",
+          "OBS-7925817865fa",
+          "OBS-6de3a2ce9670",
+          "OBS-e32d1bfa91c2",
+          "OBS-25bf062ee141",
+          "OBS-9b98ea4a3378",
+          "OBS-ae0093c308ff",
+          "OBS-9766f84ae88d",
+          "OBS-751fa257b4cf",
+          "OBS-57fe6b4a13a7",
+          "OBS-50ccead0f930",
+          "OBS-bd12c620908e",
+          "OBS-9ba85281f9ef"
+        ]
+      },
+      {
+        "id": "H3",
+        "label": "Fully synthetic/generated media",
+        "description": "The media was generated or substantially synthesized rather than captured as presented.",
+        "support_observation_ids": [
+          "OBS-5d28b84bf498"
+        ],
+        "contradiction_observation_ids": [],
+        "uninformative_observation_ids": [
+          "OBS-3f42e2abce41",
+          "OBS-ead334147888",
+          "OBS-0821fe69a49a",
+          "OBS-9cbf5c474ded",
+          "OBS-51dbfb5844c1",
+          "OBS-15d0eefdc743",
+          "OBS-3fbd1281222c",
+          "OBS-7925817865fa",
+          "OBS-6de3a2ce9670",
+          "OBS-e32d1bfa91c2",
+          "OBS-25bf062ee141",
+          "OBS-9b98ea4a3378",
+          "OBS-ae0093c308ff",
+          "OBS-9766f84ae88d",
+          "OBS-751fa257b4cf",
+          "OBS-57fe6b4a13a7",
+          "OBS-50ccead0f930",
+          "OBS-bd12c620908e",
+          "OBS-9ba85281f9ef"
+        ]
+      },
+      {
+        "id": "H4",
+        "label": "Authentic media with benign post-processing",
+        "description": "Observed anomalies are explained by legitimate editing, resizing, transcoding or platform processing.",
+        "support_observation_ids": [],
+        "contradiction_observation_ids": [],
+        "uninformative_observation_ids": [
+          "OBS-3f42e2abce41",
+          "OBS-ead334147888",
+          "OBS-0821fe69a49a",
+          "OBS-9cbf5c474ded",
+          "OBS-51dbfb5844c1",
+          "OBS-15d0eefdc743",
+          "OBS-3fbd1281222c",
+          "OBS-7925817865fa",
+          "OBS-6de3a2ce9670",
+          "OBS-e32d1bfa91c2",
+          "OBS-25bf062ee141",
+          "OBS-9b98ea4a3378",
+          "OBS-ae0093c308ff",
+          "OBS-9766f84ae88d",
+          "OBS-751fa257b4cf",
+          "OBS-57fe6b4a13a7",
+          "OBS-5d28b84bf498",
+          "OBS-50ccead0f930",
+          "OBS-bd12c620908e",
+          "OBS-9ba85281f9ef"
+        ]
+      },
+      {
+        "id": "H5",
+        "label": "Manipulated content subsequently re-encoded",
+        "description": "Manipulation may have been followed by ordinary transcoding or redistribution processing.",
+        "support_observation_ids": [
+          "OBS-5d28b84bf498"
+        ],
+        "contradiction_observation_ids": [],
+        "uninformative_observation_ids": [
+          "OBS-3f42e2abce41",
+          "OBS-ead334147888",
+          "OBS-0821fe69a49a",
+          "OBS-9cbf5c474ded",
+          "OBS-51dbfb5844c1",
+          "OBS-15d0eefdc743",
+          "OBS-3fbd1281222c",
+          "OBS-7925817865fa",
+          "OBS-6de3a2ce9670",
+          "OBS-e32d1bfa91c2",
+          "OBS-25bf062ee141",
+          "OBS-9b98ea4a3378",
+          "OBS-ae0093c308ff",
+          "OBS-9766f84ae88d",
+          "OBS-751fa257b4cf",
+          "OBS-57fe6b4a13a7",
+          "OBS-50ccead0f930",
+          "OBS-bd12c620908e",
+          "OBS-9ba85281f9ef"
+        ]
+      }
+    ],
+    "contradictions": [],
+    "missing_evidence": [
+      {
+        "item": "metadata-analysis",
+        "status": "warnings",
+        "impact": [
+          "ExifTool not installed; detailed EXIF/XMP/IPTC metadata not extracted."
+        ]
+      },
+      {
+        "item": "audio-forensics",
+        "status": "warnings",
+        "impact": [
+          "AASIST model not installed. Place aasist.onnx under models/audio or set AASIST_MODEL."
+        ]
+      },
+      {
+        "item": "c2pa-provenance",
+        "status": "warnings",
+        "impact": [
+          "c2patool unavailable; provenance was not cryptographically verified."
+        ]
+      }
+    ],
+    "bob": {
+      "hypothesis-assessor": {
+        "status": "ok",
+        "provider": "mock-bob",
+        "mode": "hypothesis-assessor",
+        "response": {
+          "hypotheses": [
+            {
+              "id": "H1",
+              "label": "Authentic recording",
+              "description": "The submitted media is consistent with an authentic capture, subject to gaps and limitations."
+            },
+            {
+              "id": "H2",
+              "label": "Manipulated face/content",
+              "description": "Some media content was altered after capture or generated synthetically."
+            },
+            {
+              "id": "H3",
+              "label": "Fully synthetic/generated media",
+              "description": "The media was generated or substantially synthesized rather than captured as presented."
+            },
+            {
+              "id": "H4",
+              "label": "Authentic media with benign post-processing",
+              "description": "Observed anomalies are explained by legitimate editing, resizing, transcoding or platform processing."
+            },
+            {
+              "id": "H5",
+              "label": "Manipulated content subsequently re-encoded",
+              "description": "Manipulation may have been followed by ordinary transcoding or redistribution processing."
+            }
+          ],
+          "reasoning_note": "Candidate hypotheses only; evidence must be assessed by the investigator."
+        }
+      },
+      "skeptic": {
+        "status": "ok",
+        "provider": "mock-bob",
+        "mode": "skeptic",
+        "response": {
+          "challenges": [
+            {
+              "observation_id": "OBS-3f42e2abce41",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-ead334147888",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-0821fe69a49a",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-9cbf5c474ded",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-51dbfb5844c1",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-15d0eefdc743",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-3fbd1281222c",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-7925817865fa",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-6de3a2ce9670",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-e32d1bfa91c2",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-25bf062ee141",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-9b98ea4a3378",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-ae0093c308ff",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-9766f84ae88d",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-751fa257b4cf",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-57fe6b4a13a7",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-5d28b84bf498",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-50ccead0f930",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-bd12c620908e",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            },
+            {
+              "observation_id": "OBS-9ba85281f9ef",
+              "challenge": "Check whether the observation has a benign technical explanation before treating it as manipulation evidence."
+            }
+          ]
+        }
+      },
+      "adversarial": {
+        "status": "ok",
+        "provider": "mock-bob",
+        "mode": "adversarial",
+        "response": {
+          "tests": [
+            "Re-check suspicious intervals on the original-resolution file.",
+            "Compare against an independently sourced copy if available.",
+            "Repeat analysis after documenting codec/transcoding conditions.",
+            "Do not count multiple detectors using the same frames as independent corroboration."
+          ]
+        }
+      },
+      "legal-proposer": {
+        "status": "ok",
+        "provider": "mock-bob",
+        "mode": "legal-proposer",
+        "response": {
+          "status": "review_required",
+          "candidates": [],
+          "note": "Legal provisions must come from the versioned approved ruleset; Bob must not invent section numbers."
+        }
+      }
+    },
+    "legal": {},
+    "reports": {},
+    "ledger": {},
+    "errors": [],
+    "human_review": {}
+  },
+  "traceability": {
+    "original_sha256": "ab5a55f617899289e5cfd23f37b9958366c6284542e309f5bac73f13bf30ea89",
+    "original_sha512": "19034ae61ede66203e1794c1be16eab2ce544cac81e8cd73a47716cd986dc7e75d010d25402659e4e8a347a0e20b46361983f03d096831fa912784779d2e9372",
+    "ledger": {
+      "valid": true,
+      "entries": 9,
+      "head": "efa4f73308f4b663e1a651c67bee3fb4a80a39f7f95c8da001327f980d8a6fbf"
+    }
+  },
+  "limitations": [
+    "Automated screening is not a binary truth detector.",
+    "Model scores are not probabilities unless a validated operating point and population are supplied.",
+    "C2PA absence is a provenance gap, not proof of manipulation.",
+    "Legal mapping is advisory and requires qualified human review."
+  ]
+}

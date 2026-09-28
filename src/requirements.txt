@@ -1,0 +1,12 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+pydantic>=2.8
+numpy>=1.26
+opencv-python>=4.10,<5
+librosa>=0.10
+soundfile>=0.12
+onnxruntime>=1.18
+c2pa-python>=0.7
+mcp[cli]>=2.0,<3
+Pillow>=10

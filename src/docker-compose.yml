@@ -1,0 +1,13 @@
+services:
+  emafig:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      BOB_MODE: ${BOB_MODE:-mock}
+      BOB_BASE_URL: ${BOB_BASE_URL:-}
+      BOB_API_KEY: ${BOB_API_KEY:-}
+      BOB_MODEL: ${BOB_MODEL:-}
+      AASIST_MODEL: ${AASIST_MODEL:-models/audio/aasist.onnx}
+    volumes:
+      - ./cases:/app/cases
+      - ./models:/app/models

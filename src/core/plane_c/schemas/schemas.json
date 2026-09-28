@@ -1,0 +1,107 @@
+{
+    "observation_v2": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "EMAFIG Observation v2",
+        "type": "object",
+        "required": ["obs_id", "case_id", "evidence_id", "source", "type", "review"],
+        "properties": {
+            "obs_id": {"type": "string", "pattern": "^OBS-\\d{5}$"},
+            "case_id": {"type": "string", "pattern": "^CASE-"},
+            "evidence_id": {"type": "string", "pattern": "^EVD-\\d{3}$"},
+            "derivative_id": {"type": ["string", "null"]},
+            "source": {"type": "string", "enum": ["tool", "bob", "officer"]},
+            "tool_run": {
+                "type": "object",
+                "properties": {
+                    "tool": {"type": "string"},
+                    "version": {"type": "string"},
+                    "output_artifact": {"type": "string"},
+                    "output_sha256": {"type": "string"}
+                }
+            },
+            "type": {"type": "string"},
+            "location": {
+                "type": "object",
+                "properties": {
+                    "frame_start": {"type": "integer"},
+                    "frame_end": {"type": "integer"},
+                    "bbox": {"type": "array", "items": {"type": "integer"}},
+                    "time_start": {"type": "number"},
+                    "time_end": {"type": "number"}
+                }
+            },
+            "measurement": {
+                "type": "object",
+                "properties": {
+                    "value": {"type": "number"},
+                    "unit": {"type": "string"},
+                    "calibrated": {"type": "boolean"}
+                },
+                "required": ["value", "unit", "calibrated"]
+            },
+            "independence_group": {"type": "string"},
+            "alternatives": {"type": "array", "items": {"type": "string"}},
+            "not_tested": {"type": "array", "items": {"type": "string"}},
+            "limitations": {"type": "array", "items": {"type": "string"}},
+            "review": {
+                "type": "object",
+                "properties": {
+                    "status": {"type": "string", "enum": ["pending", "confirmed", "rejected"]},
+                    "by": {"type": ["string", "null"]},
+                    "at": {"type": ["string", "null"]}
+                },
+                "required": ["status"]
+            }
+        }
+    },
+    "fact_sheet": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "EMAFIG Fact Sheet",
+        "type": "object",
+        "required": ["battery_name", "evidence_id", "facts"],
+        "properties": {
+            "battery_name": {"type": "string"},
+            "evidence_id": {"type": "string"},
+            "derivative_id": {"type": ["string", "null"]},
+            "facts": {"type": "object"},
+            "tool_runs": {"type": "array"},
+            "caveats": {"type": "array", "items": {"type": "string"}},
+            "timestamp": {"type": "string"}
+        }
+    },
+    "ach_cell_proposal": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "EMAFIG ACH Cell Proposal",
+        "type": "object",
+        "required": ["group_id", "hypothesis_id", "value", "reason"],
+        "properties": {
+            "group_id": {"type": "string"},
+            "hypothesis_id": {"type": "string", "pattern": "^H\\d+$"},
+            "value": {"type": "string", "enum": ["C", "I", "N"]},
+            "reason": {"type": "string"}
+        }
+    },
+    "legal_circumstance_proposal": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "EMAFIG Legal Circumstance Proposal",
+        "type": "object",
+        "required": ["circumstance_key", "reasoning"],
+        "properties": {
+            "circumstance_key": {"type": "string"},
+            "reasoning": {"type": "string"},
+            "case_facts_cited": {"type": "array", "items": {"type": "string"}}
+        }
+    },
+    "verifier_result": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "EMAFIG Verifier Sentence Result",
+        "type": "object",
+        "required": ["sentence_index", "result", "reason"],
+        "properties": {
+            "sentence_index": {"type": "integer"},
+            "result": {"type": "string", "enum": ["pass", "fail"]},
+            "reason": {"type": "string"},
+            "weaker_rewrite": {"type": "string"}
+        }
+    }
+}

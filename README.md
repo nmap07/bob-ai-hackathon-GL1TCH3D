@@ -1,4 +1,4 @@
-# 🚀 [Your Project Title Here]
+# 🚀 GL1TCH3D DEEPFAKE DETECTION TOOL
 
 > ⚠️ **Replace everything in `[ ]` brackets with your actual content before submission.**
 
@@ -8,10 +8,10 @@
 
 | Field | Value |
 |---|---|
-| **Team Name** | [Your Team Name] |
+| **Team Name** | GL1TCH3D |
 | **Track** | [AI / DevOps / Sustainability / Open] |
-| **Team Lead** | [Name] — [email@ibm.com] |
-| **Members** | [Name 1], [Name 2], [Name 3] |
+| **Team Lead** | Atharva Singh — princesingh.30456@gmail.com |
+| **Members** | Janya Parikh, Maharshi Patel, Atharv Pallival |
 
 ---
 

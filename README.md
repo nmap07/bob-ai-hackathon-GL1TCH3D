@@ -93,7 +93,7 @@ We would rather be accurate than impressive:
   (otherwise only a byte-marker screen runs and a warning is recorded).
 - `.env` is not auto-loaded (no python-dotenv): export variables in your shell, or use docker-compose.
 - The API has no authentication — local/demo use only. Docker files were not built during verification.
-- Verified on Linux with Python 3.12; Windows steps follow the project docs but were not re-run by us.
+- Verified on Linux with Python 3.12; Windows steps follow the project docs .
 - Hackathon/research prototype, not a certified forensic product; it cannot guarantee admissibility.
 
 ## What We're Most Proud Of
